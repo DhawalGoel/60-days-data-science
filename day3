@@ -1,0 +1,82 @@
+import csv
+from collections import Counter
+
+# File names
+INPUT_FILE = "students.csv"
+OUTPUT_FILE = "grade_summary.txt"
+
+
+def read_students(filename):
+    """Read student data from the CSV file."""
+    students = []
+
+    try:
+        with open(filename, "r", newline="", encoding="utf-8") as file:
+            reader = csv.DictReader(file)
+
+            for row in reader:
+                students.append(row)
+
+    except FileNotFoundError:
+        print(f"Error: {filename} was not found.")
+        return []
+
+    return students
+
+
+def count_grades(students):
+    """Count the frequency of each grade."""
+    grades = [student["Grade"].strip().upper() for student in students]
+
+    return Counter(grades)
+
+
+def create_summary(students, grade_frequency):
+    """Create a formatted summary."""
+    total_students = len(students)
+
+    summary = []
+    summary.append("STUDENT GRADE SUMMARY")
+    summary.append("=" * 30)
+    summary.append(f"Total Students: {total_students}")
+    summary.append("")
+    summary.append("Grade Frequency:")
+    summary.append("-" * 30)
+
+    # Display grades in alphabetical order
+    for grade in sorted(grade_frequency):
+        count = grade_frequency[grade]
+        summary.append(f"Grade {grade}: {count} student(s)")
+
+    return "\n".join(summary)
+
+
+def save_summary(filename, summary):
+    """Write the summary to an output file."""
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(summary)
+
+
+def main():
+    # Read student data
+    students = read_students(INPUT_FILE)
+
+    if not students:
+        return
+
+    # Count grades
+    grade_frequency = count_grades(students)
+
+    # Create summary
+    summary = create_summary(students, grade_frequency)
+
+    # Save summary
+    save_summary(OUTPUT_FILE, summary)
+
+    # Display result
+    print(summary)
+    print(f"\nSummary successfully saved to {OUTPUT_FILE}")
+
+
+if __name__ == "__main__":
+    main()
