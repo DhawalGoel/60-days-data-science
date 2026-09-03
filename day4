@@ -1,0 +1,52 @@
+# 60 Days Data Science Challenge
+
+This repository contains my journey through the 60 Days Data Science Challenge by ABTalks.
+
+## Day 4 – Project Setup + Dataset Selection
+
+### Domain
+Sales
+
+### Project Title
+Sales Performance Analysis
+
+### Problem Statement
+
+Businesses generate large amounts of sales data, but raw data alone does not provide useful insights.
+
+The objective of this project is to analyze sales data using Python and Data Science techniques to identify important patterns, trends, and factors affecting sales performance.
+
+The analysis will help understand:
+
+- Sales trends over time
+- Best-performing products
+- High-performing regions
+- Revenue distribution
+- Customer purchasing patterns
+- Factors affecting overall sales performance
+
+### Tools & Libraries
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+### Dataset
+
+The dataset will be selected from Kaggle and used for exploratory data analysis in the upcoming days.
+
+## Challenge Progress
+
+| Day | Topic | Status |
+|-----|-------|--------|
+| Day 1 | Introduction to Data Science | ✅ |
+| Day 2 | Python Basics | ✅ |
+| Day 3 | Python for Data Science | ✅ |
+| Day 4 | Project Setup + Dataset Selection | ✅ |
+
+## Author
+
+Dhawal Goel
