@@ -1,0 +1,108 @@
+# Day 5 – Data Loading & Understanding
+
+## 📌 Project
+
+**ABTalks 60 Days Data Science Challenge – Day 5**
+
+## 🎯 Objective
+
+The objective of Day 5 is to understand the dataset before performing any analysis or building a machine learning model.
+
+In this task, the sales dataset is loaded using **Pandas** and its basic structure is explored.
+
+## 🛠️ Tasks Completed
+
+* Loaded the dataset using Pandas
+* Checked the **number of rows and columns**
+* Displayed all **column names**
+* Viewed the first 5 records using `head()`
+* Checked dataset information and data types using `info()`
+* Identified missing values
+* Generated basic summary statistics
+* Identified the **target variable**
+
+## 📂 Files
+
+```text
+day5/
+│
+├── day5_data_loading_understanding.ipynb
+├── sales_data.csv
+└── README.md
+```
+
+### `day5_data_loading_understanding.ipynb`
+
+Jupyter Notebook containing the complete dataset loading and exploration process.
+
+### `sales_data.csv`
+
+The dataset used for the analysis.
+
+## 🧰 Technologies Used
+
+* Python
+* Pandas
+* Jupyter Notebook
+
+## 🔍 Dataset Analysis
+
+The notebook performs the following analysis:
+
+### 1. Dataset Shape
+
+Checks the total number of rows and columns.
+
+### 2. Column Names
+
+Displays all available features in the dataset.
+
+### 3. First 5 Rows
+
+Uses `df.head()` to understand how the data is structured.
+
+### 4. Dataset Information
+
+Uses `df.info()` to examine:
+
+* Column data types
+* Number of non-null values
+* Memory usage
+
+### 5. Missing Values
+
+Checks each column for missing or null values.
+
+### 6. Summary Statistics
+
+Uses `df.describe()` to understand numerical and categorical data.
+
+### 7. Target Variable
+
+The primary target variable for this Sales Performance Analysis project is **Sales** (or the equivalent Revenue/Sales column available in the selected dataset).
+
+The target variable represents the sales value that will be analyzed using other available features.
+
+## 📊 Key Learning
+
+This task demonstrates why **data understanding is an important first step in Data Science**.
+
+Before performing analysis or building a model, it is necessary to understand:
+
+* What data is available
+* How large the dataset is
+* What each column represents
+* Which columns contain missing values
+* What type of data each column contains
+* Which variable is the target
+
+## ✅ Conclusion
+
+The dataset was successfully loaded and explored using Pandas. Its structure, columns, data types, missing values, and summary statistics were examined, and the target variable was identified.
+
+This analysis provides the foundation for the next stages of the Data Science project.
+
+---
+
+**Challenge:** ABTalks 60 Days Data Science Challenge
+**Day:** 5 – Data Loading & Understanding
