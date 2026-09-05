@@ -1,0 +1,320 @@
+# Day 6 — Data Cleaning & Preprocessing 🧹📊
+
+## 📌 Overview
+
+This project is part of the **ABTalks Data Science Challenge**.
+
+Day 6 focuses on **Data Cleaning & Preprocessing**, an essential step in any real-world Data Science and Machine Learning workflow.
+
+Real-world datasets often contain missing values, duplicate records, incorrect data types, and inconsistent information. Before performing analysis or building machine learning models, the data needs to be cleaned and transformed into a reliable format.
+
+> **Clean Data = Reliable Insights**
+
+---
+
+## 🎯 Objectives
+
+The main objectives of this project are:
+
+* Handle missing values
+* Remove duplicate records
+* Fix incorrect data types
+* Create 2 new meaningful features
+* Generate a cleaned dataset
+* Document the complete preprocessing workflow in a notebook
+
+---
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Jupyter Notebook**
+* **Google Colab** / Jupyter
+
+---
+
+## 📂 Project Structure
+
+```text
+Day6-Data-Cleaning/
+│
+├── README.md
+├── day6_data_cleaning.ipynb
+│
+├── data/
+│   ├── raw_dataset.csv
+│   └── cleaned_dataset.csv
+│
+└── output/
+    └── cleaned_data_summary.csv
+```
+
+---
+
+## 🔄 Data Cleaning Workflow
+
+The project follows this preprocessing pipeline:
+
+```text
+Raw Dataset
+     ↓
+Load Dataset
+     ↓
+Explore Data
+     ↓
+Check Missing Values
+     ↓
+Handle Missing Values
+     ↓
+Remove Duplicates
+     ↓
+Fix Data Types
+     ↓
+Create New Features
+     ↓
+Validate Cleaned Data
+     ↓
+Save Clean Dataset
+```
+
+---
+
+## 🔍 1. Data Exploration
+
+The dataset was first inspected to understand:
+
+* Number of rows and columns
+* Column names
+* Data types
+* Missing values
+* Duplicate records
+* Basic statistical information
+
+Examples of Pandas operations used:
+
+```python
+df.head()
+df.shape
+df.info()
+df.describe()
+df.isnull().sum()
+df.duplicated().sum()
+```
+
+---
+
+## 🧩 2. Handling Missing Values
+
+Missing values were identified using:
+
+```python
+df.isnull().sum()
+```
+
+Depending on the type of column, appropriate strategies were applied.
+
+For numerical columns, missing values can be replaced using measures such as:
+
+```python
+df["column"].fillna(df["column"].median(), inplace=True)
+```
+
+For categorical columns:
+
+```python
+df["column"].fillna(df["column"].mode()[0], inplace=True)
+```
+
+The goal was to avoid losing useful records unnecessarily while maintaining data quality.
+
+---
+
+## ♻️ 3. Removing Duplicate Records
+
+Duplicate rows can lead to incorrect analysis and biased results.
+
+Duplicates were checked using:
+
+```python
+df.duplicated().sum()
+```
+
+Duplicate records were removed using:
+
+```python
+df = df.drop_duplicates()
+```
+
+After removal, the dataset was checked again to confirm that duplicate records were eliminated.
+
+---
+
+## 🔢 4. Fixing Data Types
+
+Incorrect data types can cause problems during analysis and machine learning.
+
+The dataset was inspected using:
+
+```python
+df.dtypes
+```
+
+Where required, columns were converted into appropriate data types using Pandas.
+
+Example:
+
+```python
+df["column"] = pd.to_numeric(df["column"], errors="coerce")
+```
+
+This ensures that numerical calculations and further preprocessing can be performed correctly.
+
+---
+
+## ✨ 5. Feature Engineering
+
+Two new features were created from the existing dataset to extract additional useful information.
+
+### Feature 1
+
+**[New Feature Name]**
+
+Description:
+
+> [Briefly explain what this feature represents and why it is useful.]
+
+Example:
+
+```python
+df["new_feature_1"] = ...
+```
+
+### Feature 2
+
+**[New Feature Name]**
+
+Description:
+
+> [Briefly explain what this feature represents and why it is useful.]
+
+Example:
+
+```python
+df["new_feature_2"] = ...
+```
+
+These features provide additional information that can be useful for future analysis and machine learning tasks.
+
+---
+
+## ✅ Data Validation
+
+After preprocessing, the cleaned dataset was validated by checking:
+
+```python
+df.info()
+df.isnull().sum()
+df.duplicated().sum()
+df.describe()
+```
+
+The final dataset was checked to ensure:
+
+* Missing values were handled
+* Duplicate records were removed
+* Data types were corrected
+* New features were successfully created
+* The dataset was ready for further analysis
+
+---
+
+## 📊 Before vs After
+
+| Check                | Before Cleaning | After Cleaning |
+| -------------------- | --------------: | -------------: |
+| Missing Values       |         Present |        Handled |
+| Duplicate Rows       |         Present |        Removed |
+| Incorrect Data Types |         Present |      Corrected |
+| New Features         |               0 |              2 |
+| Dataset Status       |             Raw |        Cleaned |
+
+---
+
+## 📁 Output
+
+The project produces a cleaned dataset:
+
+```text
+cleaned_dataset.csv
+```
+
+This dataset can be used for:
+
+* Exploratory Data Analysis
+* Data Visualization
+* Statistical Analysis
+* Machine Learning
+* Predictive Modeling
+
+---
+
+## 📓 Notebook
+
+The complete data cleaning and preprocessing process is documented in:
+
+```text
+day6_data_cleaning.ipynb
+```
+
+The notebook contains the code, explanations, and validation steps used throughout the project.
+
+---
+
+## 💡 Key Learnings
+
+Through this project, I learned:
+
+1. Why data cleaning is important in Data Science.
+2. How to identify and handle missing values.
+3. How duplicate records can affect analysis.
+4. How to inspect and correct data types using Pandas.
+5. How feature engineering can create additional useful information.
+6. How to validate a dataset after preprocessing.
+7. How to prepare real-world data for further analysis and machine learning.
+
+---
+
+## 🚀 Future Improvements
+
+The cleaned dataset can be used in the next stages of the Data Science workflow.
+
+Possible next steps include:
+
+* Exploratory Data Analysis (EDA)
+* Data Visualization
+* Correlation Analysis
+* Feature Selection
+* Machine Learning Model Development
+* Model Evaluation
+
+---
+
+## 👨‍💻 Author
+
+**Dhawal Goel**
+
+Data Science Challenge — **ABTalks**
+
+GitHub: [DhawalGoel](https://github.com/DhawalGoel)
+
+---
+
+## 🏆 Challenge
+
+**ABTalks Data Science Challenge**
+
+**Day 6 — Data Cleaning & Preprocessing**
+
+> *Clean data is the foundation of reliable Data Science.*
